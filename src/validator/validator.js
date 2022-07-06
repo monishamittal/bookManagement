@@ -37,28 +37,35 @@ const isValidPassword = function (password) {
     return passwordRegex.test(password)
 }
 
-// Street Validation
-const isValidStreet = function (street) {
-    // if (typeof value === 'undefined' || value === null) return false
-    // if (typeof value === "string" && value.trim().length === 0) return false
-    const streetRegex = /#\d+ ([^,]+), ([A-Z]{2}) (\d{5})/
-    return streetRegex.test(street)
+const validAddress = function(address) {
+    if (typeof address === 'undefined' || address === null) return false
+    if (Object.keys(address).length === 0) return false
+    return true;
 }
 
-///City validation
-const isValidCity = function (city) {
-    // if (typeof value === 'undefined' || value === null) return false
-    // if (typeof value === "string" && value.trim().length === 0) return false
-    const cityRegex = /[0-9]/
-  return cityRegex.test(city)
-}
-//Pincode Validation
-const isValidPincode = function (pincode) {
-//     if (typeof value === 'undefined' || value === null) return false
-//     if (typeof value === "string" && value.trim().length === 0) return false
-    const pincodeRegex = /#\d+ ([^,]+), ([A-Z]{2}) (\d{5})/
-    return pincodeRegex.test(pincode)
-}
+
+// Street Validation
+// const isValidStreet = function (street) {
+//     // if (typeof value === 'undefined' || value === null) return false
+//     // if (typeof value === "string" && value.trim().length === 0) return false
+//     const streetRegex = /#\d+ ([^,]+), ([A-Z]{2}) (\d{5})/
+//     return streetRegex.test(street)
+// }
+
+// ///City validation
+// const isValidCity = function (city) {
+//     // if (typeof value === 'undefined' || value === null) return false
+//     // if (typeof value === "string" && value.trim().length === 0) return false
+//     const cityRegex = /[0-9]/
+//   return cityRegex.test(city)
+// }
+// //Pincode Validation
+// const isValidPincode = function (pincode) {
+// //     if (typeof value === 'undefined' || value === null) return false
+// //     if (typeof value === "string" && value.trim().length === 0) return false
+//     const pincodeRegex = /#\d+ ([^,]+), ([A-Z]{2}) (\d{5})/
+//     return pincodeRegex.test(pincode)
+// }
 
 //Value Validation
 const isValid = function (value) {
@@ -75,4 +82,5 @@ const isValidObjectId=function(ObjectId){
 }
 
 
-module.exports = { isValid, isValidName, isValidEmail, isValidMobile, isValidPassword,isValidObjectId,isValidRequestBody,isValid,isValidtitle,isValidStreet,isValidCity,isValidPincode }
+module.exports = { isValid, isValidName, isValidEmail, isValidMobile, isValidPassword,isValidObjectId,isValidRequestBody,isValid,isValidtitle}
+    // isValidStreet,isValidCity,isValidPincode }

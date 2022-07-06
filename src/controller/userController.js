@@ -8,6 +8,7 @@ const createUser= async function(req,res){
 
     try{
     let data=req.body
+    // let phoneToString=parseInt(data.phone, 10);
     const{title,name,phone,email,password,address}=data
 
     ///  Validation start
@@ -22,23 +23,23 @@ const createUser= async function(req,res){
    
     
    
-    if(typeof(address) != 'object'){
-        return res.status(400).send({ status: false, message: "address must be in object." })
-    }
+    // if(typeof(address) != 'object'){
+    //     return res.status(400).send({ status: false, message: "address must be in object." })
+    // }
 
-    if(!validator.isValid(street)){ return res.status(400).send({status:false,message:"Empty street not accepted."})}
-    if(!validator.isValid(city)){ return res.status(400).send({status:false,message:"Empty address not accepted."})}
-    if(!validator.isValid(pincode)){ return res.status(400).send({status:false,message:"Empty address not accepted."})}
+    // if(!validator.isValid(street)){ return res.status(400).send({status:false,message:"Empty street not accepted."})}
+    // if(!validator.isValid(city)){ return res.status(400).send({status:false,message:"Empty address not accepted."})}
+    // if(!validator.isValid(pincode)){ return res.status(400).send({status:false,message:"Empty address not accepted."})}
     
-    if (!validator.isValidStreet(address.street)) {
-        return res.status(400).send({ status: false, message: "Invalid street address." })
-    }
-    if (!validator.validString(address.city)) {
-        return res.status(400).send({ status: false, message: "Invalid City address." })
-    }
-    if (!validator.validString(address.pincode)) {
-        return res.status(400).send({ status: false, message: "Invalid Pincode address." })
-    }
+    // if (!validator.isValidStreet(address.street)) {
+    //     return res.status(400).send({ status: false, message: "Invalid street address." })
+    // }
+    // if (!validator.validString(address.city)) {
+    //     return res.status(400).send({ status: false, message: "Invalid City address." })
+    // }
+    // if (!validator.validString(address.pincode)) {
+    //     return res.status(400).send({ status: false, message: "Invalid Pincode address." })
+    // }
 
 
     if(!validator.isValidtitle(title)){ return res.status(400).send({status:false,message:"Title should be [from Mr,Miss,Mrs]"})}
