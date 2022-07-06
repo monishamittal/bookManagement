@@ -22,7 +22,7 @@ const isValidName = function (name) {
 //Email Validation 
 const isValidEmail = function (email) {
     const emailRegex = /^[a-z0-9][a-z0-9-_\.]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/
-    return emailRegex.test(email)
+    return emailRegex.test(email.toLowerCase())
 }
 
 //Mobile Validation
