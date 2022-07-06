@@ -8,35 +8,47 @@ const userSchema = new mongoose.Schema(
         title: {
             type:String,
             require:true, 
-            enum:[Mr, Mrs, Miss]
+            trim:true,
+            enum:["Mr", "Mrs", "Miss"] 
         },
         name: {
             type:String,
-            required: true
+            required: true,
+            trim:true
         },
         phone: {
             type:String,
             required:true,
-            unique:true
+            unique:true,
+            trim:true,
         },
         email: {
             type:String,
             required:true,
-            unique:true
+            unique:true,
+            trim:true,
+            lowercase:true
         }, 
         password: {
             type:String,
-            required:true, 
+            required:true,
+            trim:true,
+            min: 8 , 
+            max: 15
+ 
         },
         address: {
           street: {
-            type:String
+            type:String,
+            trim:true,
         },
           city: {
-            type:String
+            type:String,
+            trim:true,
         },
           pincode: {
-            type:String
+            type:String,
+            trim:true,
         }
         },
  

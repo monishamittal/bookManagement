@@ -1,6 +1,6 @@
 //.................................... Import Models for using in this module ....................//
 const mongoose = require("mongoose");
-
+const ObjectId = mongoose.Schema.Types.ObjectId;
 //................................. Create Schema .........................//
 const bookSchema = new mongoose.Schema(
   {
@@ -9,11 +9,13 @@ const bookSchema = new mongoose.Schema(
         title: {
             type:String,
             required:true,
-            unique:true
+            unique:true,
+            trim:true,
         },
         excerpt: {
             type:String,
-            required:true
+            required:true,
+            trim:true,
         }, 
         userId: {
             type:ObjectId,
@@ -23,11 +25,13 @@ const bookSchema = new mongoose.Schema(
         ISBN: {
             type:String,
             required:true, 
-            unique:true
+            unique:true,
+            trim:true
         },
         category: {
             type:String,
-            required:true
+            required:true,
+            trim:true,
         },
         subcategory: [
             {
@@ -38,11 +42,21 @@ const bookSchema = new mongoose.Schema(
         reviews: {
             type:Number, 
             default: 0,
-            comment: Holds number of reviews of this book
+            // comment: Holds number of reviews of this book
         },
-        deletedAt: {Date, when the document is deleted}, 
-        isDeleted: {boolean, default: false},
-        releasedAt: {Date, mandatory, format("YYYY-MM-DD")},
+         
+        isDeleted: {
+            type:Boolean,
+             default: false
+            },
+        releasedAt: {
+            type:Date, 
+           require:true
+        },
+        deletedAt:{
+            type:Date
+            }
+            
       
   },
   { timestamps: true }
