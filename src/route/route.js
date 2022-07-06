@@ -9,9 +9,7 @@ const validator=require("../validator/validator")
 // User APIs
 router.post('/register', userController.createUser)
 router.post('/login', userController.loginUser)
-router.post('/books/:bookId/review', reviewController.createReviewByParams)
 
-router.post('/login', )
 
 
 // Books API
@@ -28,7 +26,7 @@ router.delete('/books/:bookId',bookcontroller.deleteBookByParams)
 
 //Review APIs
 
-router.post('/books/:bookId/review', )
+router.post('/books/:bookId/review', reviewController.createReviewByParams)
 
 router.put('/books/:bookId/review/:reviewId', )
 
