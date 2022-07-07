@@ -20,7 +20,7 @@ const bookSchema = new mongoose.Schema(
         userId: {
             type:ObjectId,
             required:true,
-            ref:"USER"
+            ref:"User"
         },
         ISBN: {
             type:String,
@@ -51,7 +51,8 @@ const bookSchema = new mongoose.Schema(
             },
         releasedAt: {
             type:Date, 
-           require:true
+           require:true,
+           
         },
         deletedAt:{
             type:Date
@@ -63,4 +64,4 @@ const bookSchema = new mongoose.Schema(
 );
 
 //........................................Export Schema..................................//
-module.exports = mongoose.model("BOOK", bookSchema); //provides an interface to the database like CRUD operation
+module.exports = mongoose.model("Book", bookSchema); //provides an interface to the database like CRUD operation

@@ -37,11 +37,11 @@ const isValidPassword = function (password) {
     return passwordRegex.test(password)
 }
 
-const validAddress = function(address) {
-    if (typeof address === 'undefined' || address === null) return false
-    if (Object.keys(address).length === 0) return false
-    return true;
-}
+// const validAddress = function(address) {
+//     if (typeof address === 'undefined' || address === null) return false
+//     if (Object.keys(address).length === 0) return false
+//     return true;
+// }
 
 
 // Street Validation
@@ -81,6 +81,10 @@ const isValidObjectId=function(ObjectId){
     return mongoose.Types.ObjectId.isValid(ObjectId)
 }
 
+//Date validation
+const isValidDate = function (Date) {
+    return new Date();
+  };
 
-module.exports = { isValid, isValidName, isValidEmail, isValidMobile, isValidPassword,isValidObjectId,isValidRequestBody,isValid,isValidtitle}
+module.exports = { isValid, isValidName, isValidEmail, isValidMobile, isValidPassword,isValidObjectId,isValidRequestBody,isValid,isValidtitle,isValidDate}
     // isValidStreet,isValidCity,isValidPincode }

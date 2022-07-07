@@ -115,6 +115,7 @@ const createUser = async function (req, res) {
   }
 };
 
+
 const loginUser = async function (req, res) {
   try {
     const email = req.body.email;

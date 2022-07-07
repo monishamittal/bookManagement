@@ -7,7 +7,8 @@ const reviewModel = require("../models/reviewModel")
 
 const createReviewByParams= async function(req,res){
     let review=req.body
-    // let bookId=req.params.bookId
+    let book_Id=req.params.bookId
+    
 
     let reviewData= await reviewModel.create(review)
     res.status(201).send({status:true,message:"Success",data:reviewData})

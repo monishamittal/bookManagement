@@ -7,7 +7,7 @@ const reviewSchema = new mongoose.Schema(
         bookId: {
             type: ObjectId,
             require: true,
-            ref: "BOOK",
+            ref: "Book",
         },
         reviewedBy: {
             type: String,
@@ -18,14 +18,17 @@ const reviewSchema = new mongoose.Schema(
         },
         reviewedAt: {
             type: Date,
-            require: true
+            require: true,
+            
         },
         rating: {
             type: Number,
-            require: true
+            require: true,
+            default:null
         },
         review: {
-            type: String
+            type: String,
+            default:"optional"
         },
         isDeleted: {
             type: Boolean,
@@ -33,4 +36,4 @@ const reviewSchema = new mongoose.Schema(
         },
     }, { timestamps: true })
 
-module.exports = mongoose.model("REVIEW", reviewSchema)
+module.exports = mongoose.model("Review", reviewSchema)
