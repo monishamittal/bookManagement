@@ -37,35 +37,20 @@ const isValidPassword = function (password) {
     return passwordRegex.test(password)
 }
 
-// const validAddress = function(address) {
-//     if (typeof address === 'undefined' || address === null) return false
-//     if (Object.keys(address).length === 0) return false
+const isValidAddress = function(address) {
+    if (typeof address === 'undefined' || address === null) return false
+    if (Object.keys(address).length === 0) return false
+    return true;
+}
+//it checks whether the string contain only space or not
+// const isValidString = function(value) {
+//     if (typeof value === 'undefined' || value === null) return false
+//     if (typeof value === 'string' && value.trim().length === 0) return false 
+     
 //     return true;
 // }
 
 
-// Street Validation
-// const isValidStreet = function (street) {
-//     // if (typeof value === 'undefined' || value === null) return false
-//     // if (typeof value === "string" && value.trim().length === 0) return false
-//     const streetRegex = /#\d+ ([^,]+), ([A-Z]{2}) (\d{5})/
-//     return streetRegex.test(street)
-// }
-
-// ///City validation
-// const isValidCity = function (city) {
-//     // if (typeof value === 'undefined' || value === null) return false
-//     // if (typeof value === "string" && value.trim().length === 0) return false
-//     const cityRegex = /[0-9]/
-//   return cityRegex.test(city)
-// }
-// //Pincode Validation
-// const isValidPincode = function (pincode) {
-// //     if (typeof value === 'undefined' || value === null) return false
-// //     if (typeof value === "string" && value.trim().length === 0) return false
-//     const pincodeRegex = /#\d+ ([^,]+), ([A-Z]{2}) (\d{5})/
-//     return pincodeRegex.test(pincode)
-// }
 
 //Value Validation
 const isValid = function (value) {
@@ -86,5 +71,6 @@ const isValidDate = function (Date) {
     return new Date();
   };
 
-module.exports = { isValid, isValidName, isValidEmail, isValidMobile, isValidPassword,isValidObjectId,isValidRequestBody,isValid,isValidtitle,isValidDate}
+module.exports = { isValid, isValidName, isValidEmail, isValidMobile, isValidPassword,isValidObjectId,isValidRequestBody,isValid,isValidtitle,isValidDate,isValidAddress}//isValidString}
     // isValidStreet,isValidCity,isValidPincode }
+ 
