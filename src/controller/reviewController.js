@@ -108,7 +108,7 @@ const deleteByparams = async function (req, res) {
         return res.status(404).send({ status: false, message: "Review name is not present" })
 
     const updateDelete = await reviewModel.updateMany({ _id: reviewId }, { $set: { isDeleted: true } }, { new: true })
-    await bookModel.updateOne({ _id: bookId }, { $inc: { review: -1 } })
+    await bookModel.updateOne({ _id: bookId }, { $inc: { reviews: -1 } })
     res.status(200).send({ status: true, mesaage: "Success", data: updateDelete })
 }
 
