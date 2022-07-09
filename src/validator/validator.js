@@ -56,8 +56,6 @@ const isValidAddress = function(address) {
 const isValid = function (value) {
     if (typeof value === 'undefined' || value === null) return false
     if (typeof value === "string" && value.trim().length === 0) return false
-    // if (typeof value === Number && value.trim().length === 0) return false
-
     return true
 }
 
@@ -71,6 +69,6 @@ const isValidDate = function (Date) {
     return new Date();
   };
 
-module.exports = { isValid, isValidName, isValidEmail, isValidMobile, isValidPassword,isValidObjectId,isValidRequestBody,isValid,isValidtitle,isValidDate,isValidAddress}//isValidString}
+module.exports = {isValidName, isValidEmail, isValidMobile, isValidPassword,isValidObjectId,isValidRequestBody,isValid,isValidtitle,isValidDate,isValidAddress}//isValidString}
     // isValidStreet,isValidCity,isValidPincode }
  

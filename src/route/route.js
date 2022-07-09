@@ -29,9 +29,11 @@ router.delete('/books/:bookId',validauth.Authentication,bookcontroller.deleteBoo
  
 router.post('/books/:bookId/review', reviewController.createReviewByParams)
 
-router.put('/books/:bookId/review/:reviewId', )
+router.put('/books/:bookId/review/:reviewId',reviewController.updateReviewByParams)
 
 router.delete('/books/:bookId/review/:reviewId', )
+
+
 
 
 
