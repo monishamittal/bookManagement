@@ -106,6 +106,9 @@ const deleteByparams = async function (req, res) {
     //const checkReviewName = await reviewModel.findById(reviewId)
     if (!checkReviewId.review)
         return res.status(404).send({ status: false, message: "Review name is not present" })
+    //=======================================isDeleted======================================>
+    if (checkReviewId.isDeleted === true)
+        return res.status(404).send({ status: false, message: "Review might be deleted" })
 
     const updateDelete = await reviewModel.updateMany({ _id: reviewId }, { $set: { isDeleted: true } }, { new: true })
     await bookModel.updateOne({ _id: bookId }, { $inc: { reviews: -1 } })

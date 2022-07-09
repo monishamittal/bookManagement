@@ -31,8 +31,7 @@ router.post('/books/:bookId/review', reviewController.createReviewByParams)
 
 router.put('/books/:bookId/review/:reviewId',reviewController.updateReviewByParams)
 
-router.delete('/books/:bookId/review/:reviewId', )
-
+router.delete('/books/:bookId/review/:reviewId',reviewController.deleteByparams )
 
 
 
