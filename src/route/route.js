@@ -34,6 +34,9 @@ router.put('/books/:bookId/review/:reviewId',reviewController.updateReviewByPara
 router.delete('/books/:bookId/review/:reviewId',reviewController.deleteByparams )
 
 
+router.all('/', async function(req, res){
+    res.status(404).send({status: false, msg: "Page Not Found!!!"})
+})
 
 
 

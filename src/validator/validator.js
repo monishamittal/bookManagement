@@ -50,6 +50,13 @@ const isValidAddress = function(address) {
 //     return true;
 // }
 
+// ISBN validation
+const isvalidISBN = function(value) {
+    if (!(/^(?:ISBN(?:-1[03])?:? )?(?=[-0-9 ]{17}$|[-0-9X ]{13}$|[0-9X]{10}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?(?:[0-9]+[- ]?){2}[0-9X]$/.test(value.trim()))) {
+        return false
+    }
+    return true
+};
 
 
 //Value Validation
@@ -69,6 +76,6 @@ const isValidDate = function (Date) {
     return new Date();
   };
 
-module.exports = {isValidName, isValidEmail, isValidMobile, isValidPassword,isValidObjectId,isValidRequestBody,isValid,isValidtitle,isValidDate,isValidAddress}//isValidString}
+module.exports = {isValidName, isValidEmail, isValidMobile, isValidPassword,isValidObjectId,isValidRequestBody,isValid,isValidtitle,isValidDate,isValidAddress,isvalidISBN}//isValidString}
     // isValidStreet,isValidCity,isValidPincode }
  

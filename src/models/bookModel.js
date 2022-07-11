@@ -50,7 +50,7 @@ const bookSchema = new mongoose.Schema(
              default: false
             },
         releasedAt: {
-            type:String, 
+            type:String,
            require:true,
            
         },
