@@ -1,6 +1,7 @@
 //.................................... Import Models for using in this module ....................//
 const mongoose = require("mongoose");
 const ObjectId = mongoose.Schema.Types.ObjectId;
+
 //................................. Create Schema .........................//
 const reviewSchema = new mongoose.Schema(
     {
@@ -19,16 +20,16 @@ const reviewSchema = new mongoose.Schema(
         reviewedAt: {
             type: Date,
             require: true,
-            
+
         },
         rating: {
             type: Number,
             require: true,
-            default:null
+            default: null
         },
         review: {
             type: String,
-            default:"optional"
+            default: "optional"
         },
         isDeleted: {
             type: Boolean,
