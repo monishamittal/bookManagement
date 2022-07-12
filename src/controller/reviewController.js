@@ -24,22 +24,30 @@ const createReviewByParams = async function(req, res) {
 
     let body = req.body
         //===================destructuring==============================================>
-    const { reviewedBy, rating, review } = body
+    const { reviewedBy, rating, review, reviewedAt } = body
     //========================check valid body======================================>
     if (isValidRequestBody.body)
         return res.status(400).send({ satus: false, message: "please provide data" })
             //=========================check reviewer =======================================>
             // if (!reviewedBy)
             //     return res.status(400).send({ status: false, message: "please provide review name" })
-            // //==================================check alphabetic character====================>
-            // if (!isValid(reviewedBy))
-            //     return res.status(400).send({ status: false, message: "please give alphabetic character 1" })
+            //==================================check alphabetic character====================>
+    if (!isValid(reviewedBy))
+        return res.status(400).send({ status: false, message: "please provide review name" })
             //====================================review========================================>
     if (!review)
         return res.status(400).send({ status: false, message: "please provide review" })
             // //==========================check alphabetic character for review=============>
     if (!isValid(review))
         return res.status(400).send({ status: false, message: "please give alphabetic character" })
+
+
+    if (!validator.isValid(reviewedAt)) {
+        return res.status(400).send({ status: false, message: "Enter reviewedAt" })
+    }
+    if (!validator.isValidDate(reviewedAt)) {
+        return res.status(400).send({ status: false, message: "Enter a valid reviewedAt format - YYYY-MM-DD " })
+    }
 
 
     if (!rating)
